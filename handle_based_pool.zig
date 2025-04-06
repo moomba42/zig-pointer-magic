@@ -122,7 +122,7 @@ pub fn HandleBasedPool(
             };
         }
 
-        pub fn get(self: @This(), handle: Handle) HandleError!*const TResource {
+        pub fn get(self: *@This(), handle: Handle) HandleError!*const TResource {
             if(handle.index >= self.entries.len) {
                 return HandleError.HandleOutOfBounds;
             }
